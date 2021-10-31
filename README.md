@@ -12,6 +12,23 @@
 
 ## 2. Results
 
+### Stock Performance
+#### The performance of the stocks all generally all made less returns than they did in the previous year except for RUN and TERP
+
+
+### Execution times of script
+#### The refracting of the script made a huge difference. When I first had run the script it took 53469.68 seconds and 53443.6 seconds for 2017 and 2018 respectively. When I refracted the script it took .3164062 seconds and .3203125 seconds for 2017 and 2018 respectively. This is a huge time difference just by writting the lines of code to be more efficient.
+
+![Green stocks 2017](https://github.com/Samkyang/stock-analysis./blob/main/Green%20Stocks%202017.png)
+##### Initial code for 2017
+![Challenge 2017](https://github.com/Samkyang/stock-analysis./blob/main/Challenge%202017.png)
+##### refracted code for 2017
+
+![Green stocks 2018](https://github.com/Samkyang/stock-analysis./blob/main/Green%20Stock%202018.png)
+##### Initial code for 2018
+![Challenge 2018](https://github.com/Samkyang/stock-analysis./blob/main/Challenge%202018.png)
+##### refracted code for 2018
+
 
 
 
