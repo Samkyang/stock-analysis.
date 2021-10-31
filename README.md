@@ -30,7 +30,82 @@
 ![Challenge 2018](https://github.com/Samkyang/stock-analysis./blob/main/Challenge%202018.png)
 ##### refracted code for 2018
 
+How I was able to calculate the time was by using the Timer Function then displaying it in a message box.
 
+``startTime = Timer``
+
+``...``
+
+``EndTimer = Timer``
+
+``MsgBox "This code ran in " & (endTime - startTime) & " seconds for the year " & (yearValue)``
+
+#### More Useful codes were nested ``for`` statements.
+#### The way these were used were by putting a `for` statement inside another `for` statement so that I could have the macro run through all the whole dataset and find specific tickers, sum the volume based off of ticker, as well as find the starting and ending price, 
+
+    '1a) Create a ticker Index
+   
+    For j = 0 To 11
+    tickerIndex = Tickers(j)
+   
+    '1b) Create three output arrays
+       
+        Dim tickerStartingPrices As Single
+        Dim tickerEndingPrices As Single
+        Dim tickerVolumes As Long
+
+    '2a) Create a for loop to initialize the tickerVolumes to zero
+    '2b) Loop over all the rows in the spreadsheet.
+        Sheets(yearValue).Activate
+        tickerVolumes = 0
+        For i = 2 To RowCount
+
+       
+        '3a) Increase volume for current ticker
+       
+             If Cells(i, 1).Value = tickerIndex Then
+
+                'store and add to volume
+                tickerVolumes = tickerVolumes + Cells(i, 8).Value
+               
+             End If
+       
+        '3b) Check if the current row is the first row with the selected tickerIndex.
+        'If  Then
+           
+        If Cells(i, 1).Value = tickerIndex And Cells(i - 1, 1).Value <> tickerIndex Then
+         
+         'store starting price
+         tickerStartingPrices = Cells(i, 6).Value
+       
+         End If
+           
+       
+        '3c) check if the current row is the last row with the selected ticker
+         'If the next row’s ticker doesn’t match, increase the tickerIndex.
+        'If  Then
+           
+           If Cells(i, 1).Value = tickerIndex And Cells(i + 1, 1).Value <> tickerIndex Then
+           
+            'store ending price
+            tickerEndingPrices = Cells(i, 6).Value
+
+        '3d Increase the tickerIndex.
+           
+           
+        End If
+   
+   
+    Next i
+   
+    '4) Loop through your arrays to output the Ticker, Total Daily Volume, and Return.
+       
+        Worksheets("All Stocks Analysis").Activate
+        Cells(4 + j, 1).Value = tickerIndex
+        Cells(4 + j, 2).Value = tickerVolumes
+        Cells(4 + j, 3).Value = tickerEndingPrices / tickerStartingPrices - 1
+
+    Next j
 
 
 ## 3. Summary
