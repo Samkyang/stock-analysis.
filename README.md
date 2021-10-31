@@ -13,8 +13,9 @@
 ## 2. Results
 
 ### Stock Performance
-#### The performance of the stocks all generally all made less returns than they did in the previous year except for RUN and TERP
+#### The performance of the stocks all generally all made less returns than they did in the previous year except for RUN and TERP which did better than they did than the previous year.
 
+![YoY Comparison](https://github.com/Samkyang/stock-analysis./blob/main/YoY%20Comparison.png)
 
 ### Execution times of script
 #### The refracting of the script made a huge difference. When I first had run the script it took 53469.68 seconds and 53443.6 seconds for 2017 and 2018 respectively. When I refracted the script it took .3164062 seconds and .3203125 seconds for 2017 and 2018 respectively. This is a huge time difference just by writting the lines of code to be more efficient.
