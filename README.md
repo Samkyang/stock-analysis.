@@ -58,7 +58,7 @@ How I was able to calculate the time was by using the Timer Function then displa
     '2b) Loop over all the rows in the spreadsheet.
         Sheets(yearValue).Activate
         tickerVolumes = 0
-        For i = 2 To RowCount
+        For i = rowStart To RowCount
 
        
         '3a) Increase volume for current ticker
@@ -109,5 +109,39 @@ How I was able to calculate the time was by using the Timer Function then displa
 
 
 ## 3. Summary
+#### Pros and Cons of refractoring code
+#### Pros
+##### The benefits of refractoring code is that you don't have to start from scratch and write everything yourself. You can leverage what was already written or how the format wants to be displayed. Comments could also have been left in the script to outline what their objective is. 
 
+##### Initially when I downloaded the script I saw that there was already an outline as to what was needed to be accomplised and saw the formatting requirements. Seeing this gave me a better understanding of how to structure my script.
 
+    '1a) Create a ticker Index
+    
+
+    '1b) Create three output arrays   
+    
+    
+    ''2a) Create a for loop to initialize the tickerVolumes to zero. 
+    
+        
+    ''2b) Loop over all the rows in the spreadsheet. 
+    For i = 2 To RowCount
+    
+        '3a) Increase volume for current ticker
+        
+        
+        '3b) Check if the current row is the first row with the selected tickerIndex.
+        'If  Then
+            
+            
+            
+        'End If
+        
+        '3c) check if the current row is the last row with the selected ticker
+         'If the next row’s ticker doesn’t match, increase the tickerIndex.
+        'If  Then
+            
+            
+
+#### Cons
+##### The drawbacks of refactoring code is that you sometimes don't understand why some code is written a certain way or if they have *Magic Numbers* instead of setting values. For instance if the data set changed and we now start code on line 3 and we didn't use the `StartRow = 2` line of code and just left it as `2`, then the next person coming in to review my script might be confused why we are grab data from line 2.
